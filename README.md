@@ -1,2 +1,1 @@
-# Yelp-clone
-Rereating Yelp.com as a Full Stack practice
+Creating a review app like mouthshut.com for fullstack practice.
