@@ -1,12 +1,28 @@
 <% include partials/header %>
 
-<h1>These are some best campground places</h1>
+<div class="container">
 
-<% camps.forEach(function(camp){ %>
-    <div>
-        <h3><%= camp.name %></h3>
-        <img src="<%= camp.image %>" alt="">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome to Review-App!</h1>
+            <p>View the best campgrounds in India</p>
+            <p>
+                <a class="btn btn-primary btn-lg" href="/camps/new">Add a new Campground</a>
+            </p>
+        </div>
+    </header>
+
+    <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+        <% camps.forEach(function(camp){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src="<%= camp.image %>">
+                    <div class="caption">
+                        <h4><%= camp.name %></h4>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
     </div>
-<% }) %>
-
-<% include partials/footer %>
+    <% include partials/footer %>
+</div>
