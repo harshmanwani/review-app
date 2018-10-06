@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-// const random = require("random-world")
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
@@ -18,19 +17,19 @@ let camps = [
     { name: "Kasol", image: "https://images.unsplash.com/photo-1496080174650-637e3f22fa03?auto=format&fit=crop&w=400&q=80" }
 ];
 
-app.get("/", function(req, res){
+app.get("/", (req, res) => {
     res.render("landing");
 });
 
-app.get("/camps", function(req, res){
+app.get("/camps", (req, res) => {
     res.render("camps", {camps});
 });
 
-app.get("/camps/new", function(req, res){
+app.get("/camps/new", (req, res) => {
     res.render("newCamp");
 });
 
-app.post("/camps", function(req, res){
+app.post("/camps", (req, res) => {
    const name = req.body.name;
    const image = req.body.image;
    const newCamp = { name, image};
@@ -38,6 +37,6 @@ app.post("/camps", function(req, res){
    res.redirect("/camps"); 
 });
 
-app.listen(3000, function(){
+app.listen(3000, () => {
     console.log("Server started at port 3000");
 })
